@@ -48,8 +48,17 @@ inquirer
         type: 'input',
         name: 'email',
         message: 'Enter a valid email address: ',
-      }
-]);
+      },
+])
+.then((answers) => {
+    const READMEContent = generateREADME(answers);
+
+    fs.writeFile('README.md', READMEContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created README.md!')
+    );
+  });
+
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
