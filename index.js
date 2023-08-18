@@ -61,6 +61,19 @@ inquirer
     );
   });
 
+  function getLicense(license) {
+    if (license === 'MIT') {
+      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    } else if (license === 'Apache') {
+      return "[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+    } else if (license === 'GPL') {
+      return "[![License: GPL](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+    } else if (license === 'Other') {
+      return "Your custom license badge here";
+    } else {
+      return "No license badge available";
+    }
+  }
 
   // creating skeleton of the README using template literals
   const readMeSkeleton = ({title, description, installation, usage, license, contributing, tests, github, email}) => {
@@ -71,6 +84,8 @@ inquirer
   # ${title}
 
   ${description}
+
+  ${getLicense(license)}
 
   ## Table of Contents
 - [Description](#description)
