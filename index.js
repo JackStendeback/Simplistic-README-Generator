@@ -16,28 +16,29 @@ inquirer
       },
       {
         type: 'input',
-        name: 'installation instructions',
+        name: 'installation',
         message: 'Installation Instructions: ',
       },
       {
         type: 'input',
-        name: 'usage information',
+        name: 'usage',
         message: 'Please insert README usage information: ',
       },
       {
         type: 'input',
-        name: 'contribution guidelines',
+        name: 'contributing',
         message: 'Please enter your contribution guidelines: ',
       },
       {
         type: 'input',
-        name: 'test instuctions',
+        name: 'tests',
         message: 'Please enter your testing instructions: ',
       },
       {
         type: 'list',
         name: 'license',
         message: 'Please choose the type of license you would like to use: ',
+        choices: ['MIT', 'Apache', 'GPL', 'Other'],
       },
       {
         type: 'input',
@@ -51,7 +52,7 @@ inquirer
       },
 ])
 .then((answers) => {
-    const READMEContent = generateREADME(answers);
+    const READMEContent = readMeSkeleton(answers);
 
     fs.writeFile('README.md', READMEContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README.md!')
@@ -60,14 +61,20 @@ inquirer
 
 
   // creating skeleton of the README using template literals
-  const readMeSkeleton = ({title, description, tableofcontents, installation, usage, license, contributing, tests, questions}) => 
+  const readMeSkeleton = ({title, description, installation, usage, license, contributing, tests, github, email}) => 
   `
   # ${title}
 
   ${description}
 
   ## Table of Contents
-  ${tableofcontents}
+  [Description]
+  [Installation]
+  [Usage]
+  [License]
+  [Contributing]
+  [Tests]
+  [Questions]
 
   ## Installation
   ${installation}
@@ -86,7 +93,8 @@ inquirer
 
   ## Questions
   If you have any questions, feel free to contact me:
-  - ${questions}
+  - ${github}
+  - ${email}
 `;
 
 
