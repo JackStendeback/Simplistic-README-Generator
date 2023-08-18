@@ -65,46 +65,6 @@ inquirer
   // creating skeleton of the README using template literals
   const readMeSkeleton = ({title, description, installation, usage, license, contributing, tests, github, email}) => {
   const githubLink = `[${github}](https://github.com/${github})`;
-  
-  let licenseNotice = '';
-  let licenseBadgeURL = '';
-
-  if (license === 'MIT') {
-    licenseNotice = `
-This application is covered under the [MIT License](https://opensource.org/licenses/MIT).
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-`;
-    licenseBadgeURL = 'https://img.shields.io/badge/License-MIT-yellow.svg';
-  } else if (license === 'Apache') {
-    licenseNotice = `
-This application is covered under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).
-
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-`;
-    licenseBadgeURL = 'https://img.shields.io/badge/License-Apache%202.0-blue.svg';
-  } else if (license === 'GPL-3.0') {
-    licenseNotice = `
-This application is covered under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0).
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-`;
-    licenseBadgeURL = 'https://img.shields.io/badge/License-GPLv3-blue.svg';
-  } else if (license === 'ISC') {
-    licenseNotice = `
-This application is covered under the [ISC License](https://opensource.org/licenses/ISC).
-
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-`;
-    licenseBadgeURL = 'https://img.shields.io/badge/License-ISC-blue.svg';
-  } else if (license === 'BSD-3-Clause') {
-    licenseNotice = `
-This application is covered under the [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause).
-
-[![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-`;
-    licenseBadgeURL = 'https://img.shields.io/badge/License-BSD%203--Clause-blue.svg';
-  }
 
   return `
   
