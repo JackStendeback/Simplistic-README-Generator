@@ -72,13 +72,13 @@ inquirer
   ${description}
 
   ## Table of Contents
-  [Description]
-  [Installation]
-  [Usage]
-  [License]
-  [Contributing]
-  [Tests]
-  [Questions]
+  [Description](#description)
+  [Installation]($installation)
+  [Usage](#usage)
+  [License](#license)
+  [Contributing](#contributing)
+  [Tests](#tests)
+  [Questions](#email)
 
   ## Installation
   ${installation}
@@ -99,5 +99,6 @@ inquirer
   If you have any questions, feel free to contact me:
   - GitHub: ${githubLink}
   - Email: ${email}
+        - I am available by email during normal work day hours(9-5), so feel free to send me any questions or comments you may have about the code or its functionality!
 `;
   };
