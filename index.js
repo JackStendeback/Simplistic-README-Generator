@@ -1,7 +1,7 @@
-// TODO: Include packages needed for this application
+// Included packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+// Created an array of questions for user input
 inquirer
     .prompt([
       {
@@ -63,8 +63,10 @@ inquirer
 
 
   // creating skeleton of the README using template literals
-  const readMeSkeleton = ({title, description, installation, usage, license, contributing, tests, github, email}) => 
-  `
+  const readMeSkeleton = ({title, description, installation, usage, license, contributing, tests, github, email}) => {
+  const githubLink = `[${github}](https://github.com/${github})`;
+  return `
+  
   # ${title}
 
   ${description}
@@ -95,16 +97,7 @@ inquirer
 
   ## Questions
   If you have any questions, feel free to contact me:
-  - ${github}
-  - ${email}
+  - GitHub: ${githubLink}
+  - Email: ${email}
 `;
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+  };
