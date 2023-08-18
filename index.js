@@ -53,8 +53,10 @@ inquirer
 ])
 .then((answers) => {
     const READMEContent = readMeSkeleton(answers);
+    const timestamp = new Date().toISOString().replace(/:/g, '-');
+    const fileName = `README_${timestamp}.md`;
 
-    fs.writeFile('README.md', READMEContent, (err) =>
+    fs.writeFile(fileName, READMEContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README.md!')
     );
   });
