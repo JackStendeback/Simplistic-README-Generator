@@ -59,6 +59,36 @@ inquirer
   });
 
 
+  // creating skeleton of the README using template literals
+  const readMeSkeleton = ({title, description, tableofcontents, installation, usage, license, contributing, tests, questions}) => 
+  `
+  # ${title}
+
+  ${description}
+
+  ## Table of Contents
+  ${tableofcontents}
+
+  ## Installation
+  ${installation}
+
+  ## Usage
+  ${usage}
+
+  ## License
+  This project is licensed under the ${license} License.
+
+  ## Contributing
+  ${contributing}
+
+  ## Tests
+  ${tests}
+
+  ## Questions
+  If you have any questions, feel free to contact me:
+  - ${questions}
+`;
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
